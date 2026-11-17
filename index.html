@@ -306,6 +306,48 @@ dialog[open]{animation:in .26s cubic-bezier(.16,1,.3,1)}@keyframes in{from{trans
 .qtag.a2{color:var(--cy);background:rgba(79,209,255,.14);border-color:rgba(79,209,255,.35)}
 .qwarn{display:grid;grid-template-columns:18px 1fr;gap:10px;margin-top:16px;padding:12px 14px;border-radius:var(--r-md);background:rgba(240,190,94,.10);border:1px solid rgba(240,190,94,.32);color:var(--ex)}.qwarn p{font-size:13px;color:var(--tx)}
 
+/* —— Réglages —— */
+.rcard.glass{--_r:var(--r);--_pad:16px;padding:16px;margin-top:14px}
+.rcard:first-child{margin-top:18px}
+.rcard h3{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:800}
+.rcard .rlead{font-size:14px;color:var(--mut);margin-top:8px}.rcard .rlead b{color:var(--tx)}
+.rkv{display:flex;justify-content:space-between;gap:10px;font-size:13px;color:var(--mut);margin-top:8px}
+.rkv:first-of-type{margin-top:12px}
+.rkv span:last-child{color:var(--tx);text-align:right;font-weight:600}
+.rsw{width:16px;height:16px;border-radius:4px;background:var(--c,#fff);box-shadow:inset 0 0 0 1px rgba(255,255,255,.28),0 0 0 1px rgba(0,0,0,.35);flex:0 0 16px}
+.rcolor{display:flex;align-items:center;gap:10px;margin-top:8px;font-size:13px}
+.rcolor .hex{margin-left:auto;color:var(--mut);font-weight:600}
+.rcolor b{font-weight:600}
+.rpills{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.rpill{font-size:12px;font-weight:700;border-radius:var(--r-pill);padding:5px 10px;background:rgba(255,255,255,.08);border:1px solid var(--glass-bd);color:var(--tx)}
+.racc{margin-top:12px;padding:12px;border-radius:calc(var(--r) - 16px + 6px);background:rgba(255,255,255,.05);border:1px solid var(--glass-bd);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+.racc .rh{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.racc .rh b{font-size:14px;font-weight:800}
+.rst{font-size:12px;font-weight:700}
+.rst.on{color:var(--ok)}
+.rst.pause{color:var(--ex)}
+.rst.off{color:var(--mut)}
+.rcite{margin-top:10px;padding:10px 12px;border-radius:var(--r-in);background:rgba(255,255,255,.05);border:1px solid var(--glass-bd);font-size:13px;font-weight:600;line-height:1.4}
+.rframe{width:72px;height:128px;border-radius:8px;overflow:clip;display:grid;grid-template-rows:1fr 1fr;flex:0 0 72px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18),0 6px 16px rgba(2,6,18,.35);position:relative;background:#0c1630}
+.rframe .rg,.rframe .rw{display:grid;place-items:center;font-size:9px;font-weight:800;letter-spacing:.02em;text-transform:uppercase}
+.rframe .rg{background:linear-gradient(180deg,#2F62C9,#1E3A78);color:#E8EEF9}
+.rframe .rw{background:linear-gradient(180deg,#1a2848,#0c1630);color:#A9B7D3}
+.rframe .rcap{position:absolute;left:6px;right:6px;top:50%;transform:translateY(-50%);text-align:center;font-size:8px;font-weight:800;color:#fff;text-shadow:0 1px 2px #000;letter-spacing:.04em;line-height:1.1}
+.rmontage{display:flex;gap:14px;align-items:center;margin-top:12px}
+.rlive{display:flex;align-items:flex-start;gap:10px;margin-top:10px;font-size:13px}
+.rlive .dot{width:10px;height:10px;border-radius:50%;margin-top:5px;flex:0 0 10px;background:var(--mut)}
+.rlive.on .dot{background:var(--ok);box-shadow:0 0 0 4px rgba(98,220,168,.18)}
+.rlive b{display:block;font-size:14px}
+.rlive span{color:var(--mut);font-size:12px}
+.rbadge{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;border-radius:var(--r-pill);padding:4px 10px;margin-top:8px}
+.rbadge.live{color:var(--ok);background:rgba(98,220,168,.12);border:1px solid rgba(98,220,168,.35)}
+.rbadge.idle{color:var(--mut);background:rgba(255,255,255,.06);border:1px solid var(--glass-bd)}
+.rpost{margin-top:10px;padding:12px;border-radius:calc(var(--r) - 16px + 6px);background:rgba(255,255,255,.05);border:1px solid var(--glass-bd)}
+.rpost .when{font-size:15px;font-weight:800}
+.rpost .who{font-size:13px;color:var(--mut);margin-top:2px}
+.rpost .who b{color:var(--tx)}
+.rpost .cap{font-size:13px;margin-top:8px;color:var(--tx)}
+
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 @media (min-width:900px){
   .wrap{max-width:1040px}
@@ -318,7 +360,7 @@ dialog[open]{animation:in .26s cubic-bezier(.16,1,.3,1)}@keyframes in{from{trans
 <div class="wrap">
 <header>
   <div class="r"><h1>Clip Farm</h1><span class="upd" id="upd"></span></div>
-  <div class="chips tabs" role="tablist" aria-label="Vue" id="tabs"><button role="tab" data-t="stats" aria-pressed="true">Statistiques</button><button role="tab" data-t="file" aria-pressed="false">File d'attente</button></div>
+  <div class="chips tabs" role="tablist" aria-label="Vue" id="tabs"><button role="tab" data-t="stats" aria-pressed="true">Statistiques</button><button role="tab" data-t="file" aria-pressed="false">File d'attente</button><button role="tab" data-t="reglages" aria-pressed="false">Réglages</button></div>
   <div class="chips" role="group" aria-label="Compte" id="accs">
     
   </div>
@@ -331,7 +373,7 @@ dialog[open]{animation:in .26s cubic-bezier(.16,1,.3,1)}@keyframes in{from{trans
 <dialog id="panel" aria-labelledby="pT"><div class="ph"><button id="pBack" aria-label="Retour" hidden></button><h2 id="pT"></h2><button id="pX" aria-label="Fermer"></button></div><div class="pb" id="pB"></div></dialog>
 <script>
 // Shared logic, injected into each mockup by build.py
-const D = {"updated": "16/11/2026 à 22:22", "today": "2026-11-16", "joined": [], "accounts": [{"n": 1, "handle": "vi_clips_999", "status": "actif", "note": "Actif"}, {"n": 2, "handle": "gtavi.clp", "status": "pause", "note": "En pause jusqu'au 19/11/2026"}], "videos": [{"id": "7707516497203186976", "acc": 1, "handle": "vi_clips_999", "file": null, "url": "https://www.tiktok.com/@vi_clips_999/video/7707516497203186976", "ts": 1794546054, "date": "2026-11-13", "time": "06:00", "hour": 6, "desc": "", "tags": ["#GTA6", "#GTAVI", "#gta6clips"], "views": 572, "likes": 18, "comments": 0, "shares": 0, "duration": 76, "k": 1}, {"id": "7707774032732572950", "acc": 1, "handle": "vi_clips_999", "file": "a-deadly-ride-a-warning.mp4", "url": "https://www.tiktok.com/@vi_clips_999/video/7707774032732572950", "ts": 1794605972, "date": "2026-11-13", "time": "22:39", "hour": 22, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 328, "likes": 10, "comments": 0, "shares": 0, "duration": 67, "k": 2}, {"id": "7707992218686016790", "acc": 1, "handle": "vi_clips_999", "file": "babysitting-a-vip.mp4", "url": "https://www.tiktok.com/@vi_clips_999/video/7707992218686016790", "ts": 1794656777, "date": "2026-11-14", "time": "12:46", "hour": 12, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 777, "likes": 16, "comments": 0, "shares": 1, "duration": 100, "k": 3}, {"id": "7707999181515787542", "acc": 1, "handle": "vi_clips_999", "file": "back-in-bayside-what-is-this-place.mp4", "url": "https://www.tiktok.com/@vi_clips_999/video/7707999181515787542", "ts": 1794658398, "date": "2026-11-14", "time": "13:13", "hour": 13, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 899, "likes": 29, "comments": 0, "shares": 0, "duration": 87, "k": 4}, {"id": "7708036771531083030", "acc": 1, "handle": "vi_clips_999", "file": "comfortable-with-a-gun.mp4", "url": "https://www.tiktok.com/@vi_clips_999/video/7708036771531083030", "ts": 1794667149, "date": "2026-11-14", "time": "15:39", "hour": 15, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 847, "likes": 33, "comments": 0, "shares": 0, "duration": 67, "k": 5}, {"id": "7708054335569104150", "acc": 1, "handle": "vi_clips_999", "file": "dramatic-distraction-urgent-call.mp4", "url": "https://www.tiktok.com/@vi_clips_999/video/7708054335569104150", "ts": 1794671238, "date": "2026-11-14", "time": "16:47", "hour": 16, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 823, "likes": 35, "comments": 0, "shares": 0, "duration": 112, "k": 6}, {"id": "7708054352950250784", "acc": 2, "handle": "gtavi.clp", "file": "cops-chasing-us-holy-shit.mp4", "url": "https://www.tiktok.com/@gtavi.clp/video/7708054352950250784", "ts": 1794671239, "date": "2026-11-14", "time": "16:47", "hour": 16, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 0, "likes": 0, "comments": 0, "shares": 0, "duration": 61, "k": 1}, {"id": "7708062062970408194", "acc": 1, "handle": "vi_clips_999", "file": "no-to-petras-speech.mp4", "url": "https://www.tiktok.com/@vi_clips_999/video/7708062062970408194", "ts": 1794673038, "date": "2026-11-14", "time": "17:17", "hour": 17, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 848, "likes": 15, "comments": 0, "shares": 1, "duration": 82, "k": 7}, {"id": "7708062073577540897", "acc": 2, "handle": "gtavi.clp", "file": "creative-roadmap-security.mp4", "url": "https://www.tiktok.com/@gtavi.clp/video/7708062073577540897", "ts": 1794673039, "date": "2026-11-14", "time": "17:17", "hour": 17, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 0, "likes": 0, "comments": 0, "shares": 0, "duration": 73, "k": 2}, {"id": "7708067233326452001", "acc": 2, "handle": "gtavi.clp", "file": "dinner-a-dangerous-request.mp4", "url": "https://www.tiktok.com/@gtavi.clp/video/7708067233326452001", "ts": 1794674238, "date": "2026-11-14", "time": "17:37", "hour": 17, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 0, "likes": 0, "comments": 0, "shares": 0, "duration": 65, "k": 3}, {"id": "7708079355863289120", "acc": 2, "handle": "gtavi.clp", "file": "hold-these-guys-off.mp4", "url": "https://www.tiktok.com/@gtavi.clp/video/7708079355863289120", "ts": 1794677064, "date": "2026-11-14", "time": "18:24", "hour": 18, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 0, "likes": 0, "comments": 0, "shares": 0, "duration": 61, "k": 4}, {"id": "7708088354365017377", "acc": 2, "handle": "gtavi.clp", "file": "sequins-secrets.mp4", "url": "https://www.tiktok.com/@gtavi.clp/video/7708088354365017377", "ts": 1794679154, "date": "2026-11-14", "time": "18:59", "hour": 18, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 0, "likes": 0, "comments": 0, "shares": 0, "duration": 66, "k": 5}, {"id": "7708098418647780640", "acc": 2, "handle": "gtavi.clp", "file": "unexpected-reunion-at-the-bar.mp4", "url": "https://www.tiktok.com/@gtavi.clp/video/7708098418647780640", "ts": 1794681498, "date": "2026-11-14", "time": "19:38", "hour": 19, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 0, "likes": 0, "comments": 0, "shares": 0, "duration": 62, "k": 6}, {"id": "7708669088897191190", "acc": 1, "handle": "vi_clips_999", "file": "a-bit-dramatic.mp4", "url": "https://www.tiktok.com/@vi_clips_999/video/7708669088897191190", "ts": 1794814381, "date": "2026-11-16", "time": "08:33", "hour": 8, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 714, "likes": 14, "comments": 0, "shares": 0, "duration": 93, "k": 8}, {"id": "7708732269749390614", "acc": 1, "handle": "vi_clips_999", "file": "all-right-fuck-it-you-ready-for-this-party-bro.mp4", "url": "https://www.tiktok.com/@vi_clips_999/video/7708732269749390614", "ts": 1794829081, "date": "2026-11-16", "time": "12:38", "hour": 12, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 721, "likes": 7, "comments": 0, "shares": 0, "duration": 61, "k": 9}, {"id": "7708737411953593622", "acc": 1, "handle": "vi_clips_999", "file": "already-told-that-motherfucker-what-the-fuck-going-on-man.mp4", "url": "https://www.tiktok.com/@vi_clips_999/video/7708737411953593622", "ts": 1794830281, "date": "2026-11-16", "time": "12:58", "hour": 12, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 374, "likes": 6, "comments": 0, "shares": 0, "duration": 63, "k": 10}, {"id": "7708743597180374294", "acc": 1, "handle": "vi_clips_999", "file": "dead-for-sure-now-what-have-you-gotten-yourselves-into-i-wan.mp4", "url": "https://www.tiktok.com/@vi_clips_999/video/7708743597180374294", "ts": 1794831721, "date": "2026-11-16", "time": "13:22", "hour": 13, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 549, "likes": 8, "comments": 0, "shares": 0, "duration": 62, "k": 11}, {"id": "7708792835016871190", "acc": 1, "handle": "vi_clips_999", "file": "raymond-raymond-where-the-fuck-you-at.mp4", "url": "https://www.tiktok.com/@vi_clips_999/video/7708792835016871190", "ts": 1794843180, "date": "2026-11-16", "time": "16:33", "hour": 16, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 730, "likes": 25, "comments": 0, "shares": 0, "duration": 160, "k": 12}, {"id": "7708831047936396547", "acc": 1, "handle": "vi_clips_999", "file": null, "url": "https://www.tiktok.com/@vi_clips_999/video/7708831047936396547", "ts": 1794852077, "date": "2026-11-16", "time": "19:01", "hour": 19, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 351, "likes": 2, "comments": 0, "shares": 0, "duration": 99, "k": 13}], "example": {"cpm": 1.2, "campaigns": [{"name": "[FRANCE] Blizzard - World of Warcraft Forever", "org": "Clipping Culture", "platform": "Content Rewards", "rate": "Jusqu'à 4,00 $ pour 1 000 vues (TikTok et YouTube Shorts)", "cpm": 4.0}, {"name": "SEGA - Football Manager 27 Trailer Clipping", "org": "Clipping Culture", "platform": "Content Rewards", "rate": "Jusqu'à 2,50 $ pour 1 000 vues sur le premier bloc (non libellé, typiquement TikTok) et sur YouTube ; 1,87 $ pour 1 000 vues sur Instagram", "cpm": 2.5}, {"name": "Call of Duty - MW4 DMZ Intel Briefing Clipping", "org": "Clipping Culture", "platform": "Content Rewards", "rate": "Jusqu'à 2,00 $ pour 1 000 vues sur le premier bloc ; 1,50 $ pour 1 000 vues sur Instagram", "cpm": 2.0}, {"name": "SEGA - Metaphor ReFantazio Trailer Clipping", "org": "Clipping Culture", "platform": "Content Rewards", "rate": "Jusqu'à 2,00 $ pour 1 000 vues sur le premier bloc et sur YouTube ; 1,50 $ pour 1 000 vues sur Instagram", "cpm": 2.0}], "goals": {"viewsDay": 10000, "earnWeek": 50, "videosDay": 15}}, "cap": 15};
+const D = {"updated": "17/11/2026 à 02:14", "today": "2026-11-17", "joined": [], "accounts": [{"n": 1, "handle": "vi_clips_999", "status": "actif", "note": "Actif"}, {"n": 2, "handle": "gtavi.clp", "status": "pause", "note": "En pause jusqu'au 19/11/2026"}], "videos": [{"id": "7707516497203186976", "acc": 1, "handle": "vi_clips_999", "file": null, "url": "https://www.tiktok.com/@vi_clips_999/video/7707516497203186976", "ts": 1794546054, "date": "2026-11-13", "time": "06:00", "hour": 6, "desc": "", "tags": ["#GTA6", "#GTAVI", "#gta6clips"], "views": 572, "likes": 18, "comments": 0, "shares": 0, "duration": 76, "k": 1}, {"id": "7707774032732572950", "acc": 1, "handle": "vi_clips_999", "file": "a-deadly-ride-a-warning.mp4", "url": "https://www.tiktok.com/@vi_clips_999/video/7707774032732572950", "ts": 1794605972, "date": "2026-11-13", "time": "22:39", "hour": 22, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 328, "likes": 10, "comments": 0, "shares": 0, "duration": 67, "k": 2}, {"id": "7707992218686016790", "acc": 1, "handle": "vi_clips_999", "file": "babysitting-a-vip.mp4", "url": "https://www.tiktok.com/@vi_clips_999/video/7707992218686016790", "ts": 1794656777, "date": "2026-11-14", "time": "12:46", "hour": 12, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 778, "likes": 16, "comments": 0, "shares": 1, "duration": 100, "k": 3}, {"id": "7707999181515787542", "acc": 1, "handle": "vi_clips_999", "file": "back-in-bayside-what-is-this-place.mp4", "url": "https://www.tiktok.com/@vi_clips_999/video/7707999181515787542", "ts": 1794658398, "date": "2026-11-14", "time": "13:13", "hour": 13, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 899, "likes": 29, "comments": 0, "shares": 0, "duration": 87, "k": 4}, {"id": "7708036771531083030", "acc": 1, "handle": "vi_clips_999", "file": "comfortable-with-a-gun.mp4", "url": "https://www.tiktok.com/@vi_clips_999/video/7708036771531083030", "ts": 1794667149, "date": "2026-11-14", "time": "15:39", "hour": 15, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 847, "likes": 33, "comments": 0, "shares": 0, "duration": 67, "k": 5}, {"id": "7708054335569104150", "acc": 1, "handle": "vi_clips_999", "file": "dramatic-distraction-urgent-call.mp4", "url": "https://www.tiktok.com/@vi_clips_999/video/7708054335569104150", "ts": 1794671238, "date": "2026-11-14", "time": "16:47", "hour": 16, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 823, "likes": 35, "comments": 0, "shares": 0, "duration": 112, "k": 6}, {"id": "7708054352950250784", "acc": 2, "handle": "gtavi.clp", "file": "cops-chasing-us-holy-shit.mp4", "url": "https://www.tiktok.com/@gtavi.clp/video/7708054352950250784", "ts": 1794671239, "date": "2026-11-14", "time": "16:47", "hour": 16, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 0, "likes": 0, "comments": 0, "shares": 0, "duration": 61, "k": 1}, {"id": "7708062062970408194", "acc": 1, "handle": "vi_clips_999", "file": "no-to-petras-speech.mp4", "url": "https://www.tiktok.com/@vi_clips_999/video/7708062062970408194", "ts": 1794673038, "date": "2026-11-14", "time": "17:17", "hour": 17, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 848, "likes": 15, "comments": 0, "shares": 1, "duration": 82, "k": 7}, {"id": "7708062073577540897", "acc": 2, "handle": "gtavi.clp", "file": "creative-roadmap-security.mp4", "url": "https://www.tiktok.com/@gtavi.clp/video/7708062073577540897", "ts": 1794673039, "date": "2026-11-14", "time": "17:17", "hour": 17, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 0, "likes": 0, "comments": 0, "shares": 0, "duration": 73, "k": 2}, {"id": "7708067233326452001", "acc": 2, "handle": "gtavi.clp", "file": "dinner-a-dangerous-request.mp4", "url": "https://www.tiktok.com/@gtavi.clp/video/7708067233326452001", "ts": 1794674238, "date": "2026-11-14", "time": "17:37", "hour": 17, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 0, "likes": 0, "comments": 0, "shares": 0, "duration": 65, "k": 3}, {"id": "7708079355863289120", "acc": 2, "handle": "gtavi.clp", "file": "hold-these-guys-off.mp4", "url": "https://www.tiktok.com/@gtavi.clp/video/7708079355863289120", "ts": 1794677064, "date": "2026-11-14", "time": "18:24", "hour": 18, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 0, "likes": 0, "comments": 0, "shares": 0, "duration": 61, "k": 4}, {"id": "7708088354365017377", "acc": 2, "handle": "gtavi.clp", "file": "sequins-secrets.mp4", "url": "https://www.tiktok.com/@gtavi.clp/video/7708088354365017377", "ts": 1794679154, "date": "2026-11-14", "time": "18:59", "hour": 18, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 0, "likes": 0, "comments": 0, "shares": 0, "duration": 66, "k": 5}, {"id": "7708098418647780640", "acc": 2, "handle": "gtavi.clp", "file": "unexpected-reunion-at-the-bar.mp4", "url": "https://www.tiktok.com/@gtavi.clp/video/7708098418647780640", "ts": 1794681498, "date": "2026-11-14", "time": "19:38", "hour": 19, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 0, "likes": 0, "comments": 0, "shares": 0, "duration": 62, "k": 6}, {"id": "7708669088897191190", "acc": 1, "handle": "vi_clips_999", "file": "a-bit-dramatic.mp4", "url": "https://www.tiktok.com/@vi_clips_999/video/7708669088897191190", "ts": 1794814381, "date": "2026-11-16", "time": "08:33", "hour": 8, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 714, "likes": 14, "comments": 0, "shares": 0, "duration": 93, "k": 8}, {"id": "7708732269749390614", "acc": 1, "handle": "vi_clips_999", "file": "all-right-fuck-it-you-ready-for-this-party-bro.mp4", "url": "https://www.tiktok.com/@vi_clips_999/video/7708732269749390614", "ts": 1794829081, "date": "2026-11-16", "time": "12:38", "hour": 12, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 722, "likes": 7, "comments": 0, "shares": 0, "duration": 61, "k": 9}, {"id": "7708737411953593622", "acc": 1, "handle": "vi_clips_999", "file": "already-told-that-motherfucker-what-the-fuck-going-on-man.mp4", "url": "https://www.tiktok.com/@vi_clips_999/video/7708737411953593622", "ts": 1794830281, "date": "2026-11-16", "time": "12:58", "hour": 12, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 496, "likes": 12, "comments": 0, "shares": 0, "duration": 63, "k": 10}, {"id": "7708743597180374294", "acc": 1, "handle": "vi_clips_999", "file": "dead-for-sure-now-what-have-you-gotten-yourselves-into-i-wan.mp4", "url": "https://www.tiktok.com/@vi_clips_999/video/7708743597180374294", "ts": 1794831721, "date": "2026-11-16", "time": "13:22", "hour": 13, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 694, "likes": 8, "comments": 0, "shares": 0, "duration": 62, "k": 11}, {"id": "7708792835016871190", "acc": 1, "handle": "vi_clips_999", "file": "raymond-raymond-where-the-fuck-you-at.mp4", "url": "https://www.tiktok.com/@vi_clips_999/video/7708792835016871190", "ts": 1794843180, "date": "2026-11-16", "time": "16:33", "hour": 16, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 733, "likes": 25, "comments": 0, "shares": 0, "duration": 160, "k": 12}, {"id": "7708831047936396547", "acc": 1, "handle": "vi_clips_999", "file": "everyone-left-los-santos-for-gta-6-so-i-took-mcflys-plane.mp4", "url": "https://www.tiktok.com/@vi_clips_999/video/7708831047936396547", "ts": 1794852077, "date": "2026-11-16", "time": "19:01", "hour": 19, "desc": "", "tags": ["#GTA6", "#GTAVI", "#GTA", "#GrandTheftAuto", "#Rockstar", "#RockstarGames", "#gaming", "#fyp", "#GTAVIclip"], "views": 623, "likes": 2, "comments": 0, "shares": 0, "duration": 99, "k": 13}], "example": {"cpm": 1.2, "campaigns": [{"name": "[FRANCE] Blizzard - World of Warcraft Forever", "org": "Clipping Culture", "platform": "Content Rewards", "rate": "Jusqu'à 4,00 $ pour 1 000 vues (TikTok et YouTube Shorts)", "cpm": 4.0}, {"name": "SEGA - Football Manager 27 Trailer Clipping", "org": "Clipping Culture", "platform": "Content Rewards", "rate": "Jusqu'à 2,50 $ pour 1 000 vues sur le premier bloc (non libellé, typiquement TikTok) et sur YouTube ; 1,87 $ pour 1 000 vues sur Instagram", "cpm": 2.5}, {"name": "Call of Duty - MW4 DMZ Intel Briefing Clipping", "org": "Clipping Culture", "platform": "Content Rewards", "rate": "Jusqu'à 2,00 $ pour 1 000 vues sur le premier bloc ; 1,50 $ pour 1 000 vues sur Instagram", "cpm": 2.0}, {"name": "SEGA - Metaphor ReFantazio Trailer Clipping", "org": "Clipping Culture", "platform": "Content Rewards", "rate": "Jusqu'à 2,00 $ pour 1 000 vues sur le premier bloc et sur YouTube ; 1,50 $ pour 1 000 vues sur Instagram", "cpm": 2.0}], "goals": {"viewsDay": 10000, "earnWeek": 50, "videosDay": 15}}, "cap": 15, "settings": {"channels": {"discover": true, "games": ["Grand Theft Auto VI", "Grand Theft Auto V"], "language": ["fr"], "minViewers": 25, "named": [{"platform": "twitch", "login": "michou", "displayName": "Michou", "enabled": true}, {"platform": "kick", "login": "michou", "displayName": "Michou", "enabled": true, "minViewers": 80}]}, "detection": {"bucketSeconds": 10, "medianWindowSeconds": 300, "minScore": 3, "minMessages": 5, "minGapSeconds": 90, "maxClipsPerHour": 6, "maxClipsPerLive": 20}, "clip": {"beforeSeconds": 40, "minDurationSeconds": 61, "maxDurationSeconds": 90, "endAtSentenceBoundary": true, "sentencePauseSeconds": 0.4, "removeSilences": true, "silenceMinSeconds": 0.6}, "editing": {"width": 1080, "height": 1920, "layoutType": "split", "gameplay": {"y": 0, "height": 960}, "webcam": {"y": 960, "height": 960}, "subtitlesEnabled": true, "wordsPerGroup": 3, "positionY": 960, "colors": {"color": "#FFFFFF", "highlightColor": "#F7C204", "altHighlightColor": "#00FFA3"}}, "publishing": {"mode": "auto", "timezone": "Europe/Paris", "dailyCap": 15, "minGapMinutes": 20, "captionTemplate": "🎮 {credit} en live sur {platform} {hashtags}", "hashtags": ["#gta", "#gtarp", "#gtarpfr", "#fyp"], "accounts": [{"key": "A", "username": "@vi_clips_999", "enabled": true, "pausedUntil": null, "pausedUntilRaw": null, "maxPerDay": 5, "slots": ["08:00", "12:00", "17:00", "19:00", "21:00"]}, {"key": "B", "username": "@gtavi.clp", "enabled": true, "pausedUntil": "19/11/2026", "pausedUntilRaw": "2026-11-19", "maxPerDay": 5, "slots": ["09:00", "13:00", "18:00", "20:00", "22:00"]}, {"key": "C", "username": "@compte_c", "enabled": false, "pausedUntil": null, "pausedUntilRaw": null, "maxPerDay": 5, "slots": ["10:30", "14:30", "18:30", "20:30", "23:00"]}]}, "engine": {"updated": "17/11/2026 à 02:14", "clipsExtracted": 9, "jobsPending": 1, "state": "live", "label": "2 lives en cours", "channels": [{"platform": "twitch", "login": "aenot", "live": true, "game": "Grand Theft Auto V", "viewers": 2094, "discovered": true, "recording": true, "chatMessages": 39, "peaksLastHour": 1}, {"platform": "twitch", "login": "dvm_medja", "live": true, "game": "Grand Theft Auto V", "viewers": 4262, "discovered": true, "recording": true, "chatMessages": 1581, "peaksLastHour": 6}, {"platform": "twitch", "login": "michou", "live": false, "game": "", "viewers": 0, "discovered": false, "recording": false, "chatMessages": 0, "peaksLastHour": 0}, {"platform": "kick", "login": "michou", "live": false, "game": "", "viewers": 0, "discovered": false, "recording": false, "chatMessages": 0, "peaksLastHour": 0}]}, "posts": [{"channel": "furax22", "platform": "twitch", "username": "@vi_clips_999", "account": "A", "slot": "17/11/2026 à 08:00", "status": "scheduled", "caption": "🎮 @furax22 en live sur Twitch #gta #gtarp #gtarpfr #fyp"}], "snapshot": "17/11/2026 à 02:14"}};
 const V = D.videos, EX = D.example;
 const nf = new Intl.NumberFormat('fr-FR');
 const sp = s => s.replace(/\u202f/g, '\u00a0'); // some webfonts lack U+202F
@@ -429,7 +471,7 @@ const ICON = { // lucide-style paths, 24 grid, stroke icons
 };
 const ic = (k, s = 20) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON[k]}</svg>`;
 
-let P = 'all', ACC = 0, MET = 'views', stack = [], TAB = location.hash === '#file' ? 'file' : 'stats';
+let P = 'all', ACC = 0, MET = 'views', stack = [], TAB = ({'#file':'file','#reglages':'reglages'}[location.hash] || 'stats');
 const $ = s => document.querySelector(s);
 $('#upd').textContent = 'Mis à jour le ' + D.updated;
 $('#accs').innerHTML = '<button data-a="0" aria-pressed="true">Tous</button>' + D.accounts.map(a => `<button data-a="${a.n}">Compte ${a.n}</button>`).join('');
@@ -492,9 +534,10 @@ function versus(L) {
   ${r('Vidéos', 'count', n)}${r('Vues', 'views', nc)}${r('Vues/vidéo', 'avg', n)}${r('Engagement', 'eng', pct)}${r('Score', 'score', n1)}${r('Gains (ex.)', 'earn', usd)}</div>`;
 }
 function render() {
-  $('#accs').hidden = $('#pers').hidden = TAB === 'file';
+  $('#accs').hidden = $('#pers').hidden = TAB === 'file' || TAB === 'reglages';
   document.querySelectorAll('[data-t]').forEach(b => b.setAttribute('aria-pressed', b.dataset.t === TAB));
   if (TAB === 'file') return Q.show();
+  if (TAB === 'reglages') return R.show();
   const acc = D.accounts.find(x => x.n === ACC);
   if (ACC && !acc) { $('#main').innerHTML = `<div class="empty"><b>Compte #${ACC} pas encore créé</b>Dès qu'un 3e compte publie via WoopSocial, ses graphiques apparaissent ici.</div>`; return; }
   const L = pick(P, ACC);
@@ -555,7 +598,7 @@ document.addEventListener('click', e => {
 $('#pX').onclick = () => $('#panel').close();
 $('#pBack').onclick = () => { stack.pop(); const [k, key] = stack.pop(); show(k, key); };
 $('#panel').addEventListener('close', () => stack = []);
-document.addEventListener('click', e => { const t = e.target.closest('[data-t]'); if (!t) return; TAB = t.dataset.t; history.replaceState(null, '', TAB === 'file' ? '#file' : location.pathname + location.search); render(); window.scrollTo(0, 0); });
+document.addEventListener('click', e => { const t = e.target.closest('[data-t]'); if (!t) return; TAB = t.dataset.t; history.replaceState(null, '', ({file:'#file',reglages:'#reglages'}[TAB] || location.pathname + location.search)); render(); window.scrollTo(0, 0); });
 // —— File d'attente : lecture/écriture en direct de sashabraus74/clip-farm via api.github.com ——
 // Rien de la file n'est dans le HTML publié. Le token reste dans le localStorage de cet appareil.
 const Q = (() => {
@@ -781,6 +824,142 @@ document.addEventListener('click', e => {
 });
 return {show: () => { S ? paint() : refresh(); }};
 })();
+
+// —— Réglages : snapshot public (sans secret) du pipeline live, injecté au build ——
+const Rplat = {twitch: 'Twitch', kick: 'Kick'};
+const Rlang = {fr: 'français', en: 'anglais'};
+const Rst = {scheduled: 'Programmé', published: 'Publié', failed: 'Échec', uploaded: 'Téléversé'};
+const Rslot = s => { const [h, m] = String(s).split(':').map(Number); return m ? `${h}\u00a0h\u00a0${String(m).padStart(2,'0')}` : `${h}\u00a0h`; };
+const Rkv = (k, v) => `<div class="rkv"><span>${k}</span><span>${v}</span></div>`;
+const Rsw = (label, hex) => `<div class="rcolor"><span class="rsw" style="--c:${esc(hex)}"></span><b>${label}</b><span class="hex">${esc(hex)}</span></div>`;
+
+function Rengine(S) {
+  const e = S.engine;
+  if (!e) return `<section class="rcard glass"><h3>État du moteur</h3><p class="rlead">État indisponible dans cet instantané.</p></section>`;
+  const badge = e.state === 'live' ? 'live' : 'idle';
+  const chans = (e.channels || []).map(c => {
+    const on = c.live || c.recording;
+    const bits = [];
+    if (c.game) bits.push(esc(c.game));
+    if (on) bits.push(`${n(c.viewers)} spect.`);
+    if (c.discovered) bits.push('découvert');
+    if (c.recording) bits.push('enregistrement');
+    if (on && c.chatMessages) bits.push(`${n(c.chatMessages)} msg. chat`);
+    if (on && c.peaksLastHour) bits.push(`${c.peaksLastHour} pic${c.peaksLastHour > 1 ? 's' : ''} / h`);
+    const name = `${esc(c.login)} · ${esc(Rplat[c.platform] || c.platform)}`;
+    return `<div class="rlive${on ? ' on' : ''}"><i class="dot"></i><div><b>${name}</b><span>${on ? bits.join(' · ') : 'Pas en live'}</span></div></div>`;
+  }).join('');
+  const stats = [e.clipsExtracted != null ? `${n(e.clipsExtracted)} clip${e.clipsExtracted > 1 ? 's' : ''} extrait${e.clipsExtracted > 1 ? 's' : ''}` : '',
+    e.jobsPending != null ? `${n(e.jobsPending)} tâche${e.jobsPending > 1 ? 's' : ''} en attente` : ''].filter(Boolean).join(' · ');
+  return `<section class="rcard glass"><h3>État du moteur</h3>
+    <span class="rbadge ${badge}">${esc(e.label)}</span>
+    ${stats ? `<p class="rlead">${stats}</p>` : ''}
+    ${Rkv('Dernière mise à jour du moteur', esc(e.updated || '—'))}
+    ${chans}</section>`;
+}
+function Rposts(S) {
+  const posts = S.posts || [];
+  const upcoming = posts.filter(p => p.status === 'scheduled');
+  const list = (upcoming.length ? upcoming : posts).map(p => {
+    const plat = Rplat[p.platform] || p.platform || '';
+    const who = [p.username && `<b>${esc(p.username)}</b>`, p.account && `compte ${esc(p.account)}`, p.channel && `${esc(p.channel)}${plat ? ' · ' + esc(plat) : ''}`].filter(Boolean).join(' · ');
+    return `<div class="rpost"><div class="when">${esc(p.slot || '—')}</div>
+      <div class="who">${who} · ${esc(Rst[p.status] || p.status || '')}</div>
+      ${p.caption ? `<div class="cap">${esc(p.caption)}</div>` : ''}</div>`;
+  }).join('');
+  return `<section class="rcard glass"><h3>Prochains posts</h3>
+    ${list || '<p class="rlead">Aucun post programmé dans cet instantané.</p>'}
+    </section>`;
+}
+function Rchannels(ch) {
+  const langs = (ch.language || []).map(l => Rlang[l] || l).join(', ');
+  const named = (ch.named || []).map(c => {
+    const extra = c.minViewers != null ? ` (min. ${n(c.minViewers)} spect.)` : '';
+    return `${esc(c.displayName)} · ${esc(Rplat[c.platform] || c.platform)}${extra}`;
+  });
+  return `<section class="rcard glass"><h3>Chaînes</h3>
+    <p class="rlead">${ch.discover ? 'Découverte automatique des lives GTA (filtre langue + seuil de spectateurs).' : 'Découverte automatique désactivée : seules les chaînes nommées sont suivies.'}</p>
+    ${Rkv('Jeux', esc((ch.games || []).join(', ') || '—'))}
+    ${Rkv('Langue', esc(langs || '—'))}
+    ${Rkv('Spectateurs minimum', ch.minViewers != null ? n(ch.minViewers) : '—')}
+    ${named.length ? `<p class="rlead" style="margin-top:12px"><b>Chaînes nommées</b></p><div class="rpills">${named.map(x => `<span class="rpill">${x}</span>`).join('')}</div>` : ''}</section>`;
+}
+function Rdetect(d) {
+  return `<section class="rcard glass"><h3>Détection</h3>
+    <p class="rlead">Pics du chat : un seau est un pic si le score et le nombre de messages passent les seuils.</p>
+    ${Rkv('Score minimum', d.minScore != null ? n(d.minScore) : '—')}
+    ${d.minMessages != null ? Rkv('Messages minimum', n(d.minMessages)) : ''}
+    ${d.bucketSeconds != null ? Rkv('Durée d\'un seau', `${n(d.bucketSeconds)}\u00a0s`) : ''}
+    ${d.medianWindowSeconds != null ? Rkv('Fenêtre médiane', `±${n(d.medianWindowSeconds / 60)}\u00a0min`) : ''}
+    ${d.minGapSeconds != null ? Rkv('Écart minimum entre pics', `${n(d.minGapSeconds)}\u00a0s`) : ''}
+    ${d.maxClipsPerHour != null ? Rkv('Plafond par heure', n(d.maxClipsPerHour)) : ''}
+    ${d.maxClipsPerLive != null ? Rkv('Plafond par live', n(d.maxClipsPerLive)) : ''}
+  </section>`;
+}
+function Rclips(c) {
+  const fin = c.endAtSentenceBoundary ? (c.sentencePauseSeconds != null ? `à la phrase en cours (pause ≥ ${String(c.sentencePauseSeconds).replace('.', ',')}\u00a0s)` : 'à la phrase en cours') : 'durée fixe';
+  const sil = c.removeSilences ? (c.silenceMinSeconds != null ? `coupés au-delà de ${String(c.silenceMinSeconds).replace('.', ',')}\u00a0s` : 'coupés') : 'conservés';
+  return `<section class="rcard glass"><h3>Clips</h3>
+    ${c.beforeSeconds != null ? Rkv('Début', `${n(c.beforeSeconds)}\u00a0s avant le pic`) : ''}
+    ${c.minDurationSeconds != null ? Rkv('Durée minimum', `${n(c.minDurationSeconds)}\u00a0s`) : ''}
+    ${c.maxDurationSeconds != null ? Rkv('Durée maximum', `${n(c.maxDurationSeconds)}\u00a0s`) : ''}
+    ${Rkv('Fin', fin)}
+    ${Rkv('Silences', sil)}
+  </section>`;
+}
+function Rediting(e) {
+  const colors = e.colors || {};
+  const top = (e.gameplay && e.webcam && e.gameplay.y < e.webcam.y) ? 'Gameplay en haut, webcam en bas' : (e.layoutType || '');
+  const cap = [e.subtitlesEnabled ? 'activés' : 'désactivés', e.positionY != null && e.height ? 'au centre de l\'écran' : '', e.wordsPerGroup != null ? `${n(e.wordsPerGroup)} mot${e.wordsPerGroup > 1 ? 's' : ''} à la fois` : ''].filter(Boolean).join(', ');
+  return `<section class="rcard glass"><h3>Montage</h3>
+    <div class="rmontage">
+      <div class="rframe" aria-hidden="true"><div class="rg">Gameplay</div><div class="rw">Webcam</div><div class="rcap">•••</div></div>
+      <div style="flex:1;min-width:0">
+        ${Rkv('Format', e.width && e.height ? `${e.width}\u00a0×\u00a0${e.height}` : '—')}
+        ${top ? Rkv('Disposition', top) : ''}
+        ${Rkv('Sous-titres', cap || '—')}
+      </div>
+    </div>
+    ${colors.color ? Rsw('Texte (streamer)', colors.color) : ''}
+    ${colors.highlightColor ? Rsw('Mot prononcé', colors.highlightColor) : ''}
+    ${colors.altHighlightColor ? Rsw('Mot prononcé (autres voix)', colors.altHighlightColor) : ''}
+  </section>`;
+}
+function RaccStatus(a) {
+  if (!a.enabled) return ['off', 'Désactivé'];
+  if (a.pausedUntilRaw && D.today < a.pausedUntilRaw) return ['pause', `En pause jusqu'au ${a.pausedUntil}`];
+  if (a.pausedUntil && !a.pausedUntilRaw) return ['pause', `En pause jusqu'au ${a.pausedUntil}`];
+  return ['on', 'Actif'];
+}
+function Rpublishing(p) {
+  const accs = (p.accounts || []).map(a => {
+    const [cls, lab] = RaccStatus(a);
+    const slots = (a.slots || []).map(Rslot);
+    return `<div class="racc"><div class="rh"><b>${esc(a.key || '')} · ${esc(a.username || '')}</b><span class="rst ${cls}">${esc(lab)}</span></div>
+      ${a.maxPerDay != null ? `<p class="rlead">${n(a.maxPerDay)} posts / jour</p>` : ''}
+      ${slots.length ? `<div class="rpills">${slots.map(s => `<span class="rpill">${s}</span>`).join('')}</div>` : ''}</div>`;
+  }).join('');
+  const tags = (p.hashtags || []).join(' ');
+  return `<section class="rcard glass"><h3>Publication WoopSocial</h3>
+    ${p.mode ? Rkv('Mode', p.mode === 'auto' ? 'automatique' : esc(p.mode)) : ''}
+    ${p.dailyCap != null ? Rkv('Plafond quotidien', `${n(p.dailyCap)} au total`) : ''}
+    ${p.minGapMinutes != null ? Rkv('Écart minimum', `${n(p.minGapMinutes)}\u00a0min`) : ''}
+    ${p.timezone ? Rkv('Fuseau', esc(p.timezone)) : ''}
+    ${accs}
+    ${p.captionTemplate ? `<p class="rlead" style="margin-top:14px"><b>Légende</b></p><div class="rcite">${esc(p.captionTemplate)}${tags ? `<br>${esc(tags)}` : ''}</div>` : ''}
+  </section>`;
+}
+const R = {
+  show() {
+    const m = $('#main'), S = D.settings;
+    if (!S) {
+      m.innerHTML = `<div class="empty"><b>Réglages indisponibles</b>Les fichiers du pipeline n'ont pas pu être lus au dernier déploiement. L'instantané précédent sera repris dès qu'ils seront de nouveau accessibles.</div>`;
+      return;
+    }
+    m.innerHTML = `${Rengine(S)}${Rposts(S)}${Rchannels(S.channels || {})}${Rdetect(S.detection || {})}${Rclips(S.clip || {})}${Rediting(S.editing || {})}${Rpublishing(S.publishing || {})}
+      <p class="note">Instantané du ${esc(S.snapshot || D.updated)}. Ces réglages et cet état sont ceux lus lors du dernier déploiement, pas une vue en direct.</p>`;
+  }
+};
 
 $('#panel').addEventListener('click', e => e.target === $('#panel') && $('#panel').close());
 render();
